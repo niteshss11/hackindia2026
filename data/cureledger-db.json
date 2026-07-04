@@ -1,0 +1,1250 @@
+{
+  "version": 3,
+  "agentState": {
+    "currentRole": "Doctor",
+    "connectedWallet": "",
+    "selectedPatientId": "pat-rehana-8329",
+    "selectedDoctorId": "doc-dr-meera-1319",
+    "selectedRecordId": "rec-nitesh-blood-report-74257",
+    "selectedClaimId": "CLM-3112",
+    "activePanel": "APPROVE_CLAIM",
+    "lastIntent": "APPROVE_CLAIM",
+    "lastEntity": "Rehana",
+    "memory": [
+      "SUMMARIZE_HISTORY: nitesh report",
+      "CREATE_CLAIM: Create insurance claim for Raj amount 50000",
+      "REJECT_CLAIM: Reject the claim",
+      "APPROVE_CLAIM: Approve the claim",
+      "ADD_DOCTOR: Register Dr Meera as dermatologist",
+      "ADD_PATIENT: add patient rehana age 28 with fever",
+      "CREATE_CLAIM: give insurance claim to rehana",
+      "APPROVE_CLAIM: Approve the claim"
+    ]
+  },
+  "appState": {
+    "currentRole": "Doctor",
+    "connectedWallet": "",
+    "selectedPatientId": "pat-rehana-8329",
+    "selectedDoctorId": "doc-dr-meera-1319",
+    "selectedReportId": "rec-nitesh-blood-report-74257",
+    "selectedClaimId": "CLM-3112",
+    "currentSection": "APPROVE_CLAIM",
+    "recentCommand": "Launch CureLedger AI",
+    "chainId": "",
+    "lastConsentAction": "AccessGranted",
+    "claimStatus": "pending",
+    "emergencyMode": false
+  },
+  "patients": [
+    {
+      "id": "pat-rehana-8329",
+      "name": "Rehana",
+      "age": 28,
+      "condition": "Fever",
+      "severity": "moderate",
+      "risk": "Moderate",
+      "status": "Active",
+      "wallet": "demo-wallet",
+      "assignedDoctor": "Dr Meera",
+      "records": [],
+      "consent": [],
+      "lastReport": "Not uploaded",
+      "ownershipScore": 70,
+      "createdAt": "2026-07-04T18:19:38.329Z"
+    },
+    {
+      "id": "pat-nitesh-9583",
+      "name": "Nitesh",
+      "age": 24,
+      "condition": "Dengue",
+      "severity": "critical",
+      "risk": "High",
+      "status": "Critical",
+      "wallet": "demo-wallet",
+      "assignedDoctor": "Dr Kumar",
+      "records": [
+        "rec-nitesh-blood-report-74257"
+      ],
+      "consent": [],
+      "lastReport": "Blood Report",
+      "ownershipScore": 70,
+      "createdAt": "2026-07-04T16:56:09.583Z"
+    },
+    {
+      "id": "pat-raj",
+      "name": "Raj Kumar",
+      "age": 45,
+      "condition": "Diabetes",
+      "severity": "critical",
+      "risk": "High",
+      "status": "Critical",
+      "wallet": "0x3C44...93BC",
+      "assignedDoctor": "Dr Kumar",
+      "records": [
+        "rec-raj-blood"
+      ],
+      "consent": [
+        {
+          "doctorId": "doc-kumar",
+          "doctor": "Dr Kumar",
+          "recordId": "rec-raj-blood",
+          "access": "Blood Report",
+          "expiry": "7 days",
+          "status": "active"
+        }
+      ],
+      "lastReport": "Blood Report",
+      "ownershipScore": 91,
+      "createdAt": "2026-07-03T09:00:00.000Z"
+    },
+    {
+      "id": "pat-nitesh",
+      "name": "Nitesh",
+      "age": 24,
+      "condition": "Dengue Recovery",
+      "severity": "moderate",
+      "risk": "Moderate",
+      "status": "Active",
+      "wallet": "0x8c4A...7721",
+      "assignedDoctor": "Dr Kumar",
+      "records": [
+        "rec-nitesh-cbc"
+      ],
+      "consent": [],
+      "lastReport": "CBC Report",
+      "ownershipScore": 88,
+      "createdAt": "2026-07-03T09:03:00.000Z"
+    },
+    {
+      "id": "pat-meera",
+      "name": "Meera Iyer",
+      "age": 28,
+      "condition": "Asthma",
+      "severity": "moderate",
+      "risk": "Moderate",
+      "status": "Active",
+      "wallet": "0x90F7...c9C1",
+      "assignedDoctor": "Dr Priya",
+      "records": [
+        "rec-meera-mri"
+      ],
+      "consent": [],
+      "lastReport": "MRI Scan",
+      "ownershipScore": 78,
+      "createdAt": "2026-07-03T09:05:00.000Z"
+    },
+    {
+      "id": "pat-ananya",
+      "name": "Ananya Sharma",
+      "age": 34,
+      "condition": "Blood Pressure",
+      "severity": "stable",
+      "risk": "Normal",
+      "status": "Stable",
+      "wallet": "0x15d3...AA12",
+      "assignedDoctor": "Dr Priya",
+      "records": [
+        "rec-ananya-prescription"
+      ],
+      "consent": [],
+      "lastReport": "Prescription",
+      "ownershipScore": 84,
+      "createdAt": "2026-07-03T09:10:00.000Z"
+    }
+  ],
+  "doctors": [
+    {
+      "id": "doc-dr-meera-1319",
+      "name": "Dr Meera",
+      "specialization": "Dermatologist",
+      "wallet": "demo-wallet",
+      "patients": [],
+      "accessRequests": [],
+      "status": "Approved",
+      "createdAt": "2026-07-04T18:09:11.319Z"
+    },
+    {
+      "id": "doc-kumar",
+      "name": "Dr Kumar",
+      "specialization": "Cardiologist",
+      "wallet": "0x7099...79C8",
+      "patients": [
+        "pat-raj",
+        "pat-nitesh"
+      ],
+      "accessRequests": [],
+      "status": "Approved",
+      "createdAt": "2026-07-03T08:50:00.000Z"
+    },
+    {
+      "id": "doc-priya",
+      "name": "Dr Priya",
+      "specialization": "General Physician",
+      "wallet": "0x9965...A4dc",
+      "patients": [
+        "pat-meera",
+        "pat-ananya"
+      ],
+      "accessRequests": [
+        {
+          "id": "req-meera-priya",
+          "patientId": "pat-meera",
+          "reason": "Asthma follow-up",
+          "status": "pending"
+        }
+      ],
+      "status": "Approved",
+      "createdAt": "2026-07-03T08:55:00.000Z"
+    },
+    {
+      "id": "doc-ahmed",
+      "name": "Dr Ahmed",
+      "specialization": "Neurologist",
+      "wallet": "0x976e...E0D1",
+      "patients": [],
+      "accessRequests": [],
+      "status": "Approved",
+      "createdAt": "2026-07-03T08:58:00.000Z"
+    }
+  ],
+  "records": [
+    {
+      "id": "rec-nitesh-blood-report-74257",
+      "patientId": "pat-nitesh-9583",
+      "patientName": "Nitesh",
+      "title": "Blood Report",
+      "name": "Blood Report",
+      "type": "Blood Report",
+      "summary": "Blood Report uploaded for Nitesh. AI extracted a simple summary.",
+      "explanation": "Blood Report is now attached to Nitesh. This AI summary is for assistance only and not a medical diagnosis. Please consult a certified doctor.",
+      "hash": "0x0d732c74c5272a5063c62841d723e23f6705ad313ac5a379c00dbd34f71df580",
+      "uploadedBy": "Patient",
+      "verifiedBy": "Patient",
+      "sharedWith": [],
+      "risk": "High",
+      "createdAt": "2026-07-04T16:56:14.257Z",
+      "date": "2026-07-04"
+    },
+    {
+      "id": "rec-raj-blood",
+      "patientId": "pat-raj",
+      "patientName": "Raj Kumar",
+      "title": "Blood Report",
+      "name": "Blood Report",
+      "type": "Blood Report",
+      "summary": "HbA1c and glucose trend are elevated; doctor review is recommended.",
+      "explanation": "The blood report suggests sugar control is higher than expected. This is not a diagnosis; Raj should consult a certified doctor.",
+      "hash": "0x9b1c7a3e4d2f",
+      "uploadedBy": "City Hospital",
+      "verifiedBy": "City Hospital",
+      "sharedWith": [
+        "doc-kumar"
+      ],
+      "risk": "High",
+      "createdAt": "2026-07-03T09:14:00.000Z",
+      "date": "2026-07-03"
+    },
+    {
+      "id": "rec-nitesh-cbc",
+      "patientId": "pat-nitesh",
+      "patientName": "Nitesh",
+      "title": "CBC Report",
+      "name": "CBC Report",
+      "type": "Blood Report",
+      "summary": "Platelet count is under observation after dengue symptoms; follow-up is recommended.",
+      "explanation": "The CBC report needs doctor review because platelet trends can matter during dengue recovery. This is not a diagnosis.",
+      "hash": "0x5fc9bb13e778",
+      "uploadedBy": "City Hospital",
+      "verifiedBy": "City Hospital",
+      "sharedWith": [],
+      "risk": "Moderate",
+      "createdAt": "2026-07-03T09:16:00.000Z",
+      "date": "2026-07-03"
+    },
+    {
+      "id": "rec-meera-mri",
+      "patientId": "pat-meera",
+      "patientName": "Meera Iyer",
+      "title": "MRI Scan",
+      "name": "MRI Scan",
+      "type": "MRI Scan",
+      "summary": "No acute abnormality in demo MRI report.",
+      "explanation": "The MRI summary does not show urgent abnormalities in this demo data.",
+      "hash": "0x314fd8aa90ef",
+      "uploadedBy": "Metro Diagnostics",
+      "verifiedBy": "Metro Diagnostics",
+      "sharedWith": [],
+      "risk": "Moderate",
+      "createdAt": "2026-07-03T09:18:00.000Z",
+      "date": "2026-07-03"
+    },
+    {
+      "id": "rec-ananya-prescription",
+      "patientId": "pat-ananya",
+      "patientName": "Ananya Sharma",
+      "title": "Prescription",
+      "name": "Prescription",
+      "type": "Prescription",
+      "summary": "Blood pressure medication renewed for 30 days.",
+      "explanation": "The prescription indicates stable management and routine monitoring.",
+      "hash": "0xa1c70bb81dc2",
+      "uploadedBy": "Dr Priya",
+      "verifiedBy": "Dr Priya",
+      "sharedWith": [],
+      "risk": "Normal",
+      "createdAt": "2026-07-03T09:20:00.000Z",
+      "date": "2026-07-03"
+    }
+  ],
+  "claims": [
+    {
+      "id": "CLM-3112",
+      "patientId": "pat-rehana-8329",
+      "patientName": "Rehana",
+      "amount": 50000,
+      "reason": "Fever claim packet",
+      "status": "approved",
+      "progress": 100,
+      "packet": "Not uploaded, Patient Profile, Consent Proof",
+      "aiSummary": "AI found sufficient demo evidence for approval.",
+      "createdAt": "2026-07-04T18:20:50.452Z"
+    },
+    {
+      "id": "CLM-2495",
+      "patientId": "pat-raj",
+      "patientName": "Raj Kumar",
+      "amount": 50000,
+      "reason": "Diabetes claim packet",
+      "status": "approved",
+      "progress": 100,
+      "packet": "Blood Report, Patient Profile, Consent Proof",
+      "aiSummary": "AI found sufficient demo evidence for approval.",
+      "createdAt": "2026-07-04T17:34:07.880Z"
+    },
+    {
+      "id": "CLM-1001",
+      "patientId": "pat-raj",
+      "patientName": "Raj Kumar",
+      "amount": 50000,
+      "reason": "Diabetes blood report review",
+      "status": "pending",
+      "progress": 35,
+      "packet": "Blood Report, Patient Profile, Consent Proof",
+      "aiSummary": "Claim has key documents and awaits insurer decision.",
+      "createdAt": "2026-07-03T09:25:00.000Z"
+    },
+    {
+      "id": "CLM-1002",
+      "patientId": "pat-meera",
+      "patientName": "Meera Iyer",
+      "amount": 22000,
+      "reason": "Asthma MRI scan reimbursement",
+      "status": "approved",
+      "progress": 100,
+      "packet": "MRI Scan, Patient Profile",
+      "aiSummary": "Claim approved from complete demo documentation.",
+      "createdAt": "2026-07-03T09:30:00.000Z"
+    }
+  ],
+  "permissions": [
+    {
+      "id": "perm-raj-kumar",
+      "patientId": "pat-raj",
+      "doctorId": "doc-kumar",
+      "doctor": "Dr Kumar",
+      "recordId": "rec-raj-blood",
+      "access": "Blood Report",
+      "expiry": "7 days",
+      "status": "active"
+    }
+  ],
+  "prescriptions": [],
+  "accessRequests": [
+    {
+      "id": "req-meera-priya",
+      "doctor": "Dr Priya",
+      "doctorId": "doc-priya",
+      "patientId": "pat-meera",
+      "reason": "Asthma follow-up",
+      "status": "pending"
+    }
+  ],
+  "audit": [
+    {
+      "id": "aud-1783189259595",
+      "action": "ClaimApproved",
+      "actor": "Doctor",
+      "target": "CLM-3112",
+      "details": "CLM-3112 approved",
+      "txHash": "0xac5378851de13a5f4f2db9f31dabf61c3126c40ff5a1330030de295becd9ce7d",
+      "chainStatus": "local-proof",
+      "fallbackMessage": "Blockchain unavailable, local immutable audit hash created for demo.",
+      "createdAt": "2026-07-04T18:20:59.595Z",
+      "blockchainError": "Contract address is not configured."
+    },
+    {
+      "id": "aud-1783189250452",
+      "action": "ClaimCreated",
+      "actor": "Doctor",
+      "target": "CLM-3112",
+      "details": "CLM-3112 created for Rehana",
+      "txHash": "0x38469abdc3f2b921b84cc54b02f9707f437b3575e144528608c9c4cfe8d1e98e",
+      "chainStatus": "local-proof",
+      "fallbackMessage": "Blockchain unavailable, local immutable audit hash created for demo.",
+      "createdAt": "2026-07-04T18:20:50.452Z",
+      "blockchainError": "Contract address is not configured."
+    },
+    {
+      "id": "aud-1783189178329",
+      "action": "PatientRegistered",
+      "actor": "Doctor",
+      "target": "Rehana",
+      "details": "Rehana added with Fever",
+      "txHash": "0x055a84bba7534b55d69af097dbfb97b2562ead17ae6e1b2df5434acc8ab5836d",
+      "chainStatus": "local-proof",
+      "fallbackMessage": "Blockchain unavailable, local immutable audit hash created for demo.",
+      "createdAt": "2026-07-04T18:19:38.329Z",
+      "blockchainError": "Contract address is not configured."
+    },
+    {
+      "id": "aud-1783188551320",
+      "action": "DoctorRegistered",
+      "actor": "Doctor",
+      "target": "Dr Meera",
+      "details": "Dr Meera registered",
+      "txHash": "0x619a2354b7e1fb1c3464288133e932d62b10681d453d34d2bb059af13d7a7310",
+      "chainStatus": "local-proof",
+      "fallbackMessage": "Blockchain unavailable, local immutable audit hash created for demo.",
+      "createdAt": "2026-07-04T18:09:11.320Z",
+      "blockchainError": "Contract address is not configured."
+    },
+    {
+      "id": "aud-1783187024476",
+      "action": "ClaimApproved",
+      "actor": "Doctor",
+      "target": "CLM-2495",
+      "details": "CLM-2495 approved",
+      "txHash": "0x11e34c6a7dc9848af44c021eecf1efd84b384921081fbc1593534576854f8364",
+      "chainStatus": "local-proof",
+      "fallbackMessage": "Blockchain unavailable, local immutable audit hash created for demo.",
+      "createdAt": "2026-07-04T17:43:44.476Z",
+      "blockchainError": "Contract address is not configured."
+    },
+    {
+      "id": "aud-1783186457067",
+      "action": "ClaimRejected",
+      "actor": "Doctor",
+      "target": "CLM-2495",
+      "details": "CLM-2495 rejected",
+      "txHash": "0x98f879d936542cee537b89d39daa1968a6ee317edb21e548e0ff3fc295a9d04d",
+      "chainStatus": "local-proof",
+      "fallbackMessage": "Blockchain unavailable, local immutable audit hash created for demo.",
+      "createdAt": "2026-07-04T17:34:17.067Z",
+      "blockchainError": "Contract address is not configured."
+    },
+    {
+      "id": "aud-1783186447880",
+      "action": "ClaimCreated",
+      "actor": "Doctor",
+      "target": "CLM-2495",
+      "details": "CLM-2495 created for Raj Kumar",
+      "txHash": "0x7caaceede4ce83e7ad677862cc7874c08e922dadcb49db7440fe120ed71fa21b",
+      "chainStatus": "local-proof",
+      "fallbackMessage": "Blockchain unavailable, local immutable audit hash created for demo.",
+      "createdAt": "2026-07-04T17:34:07.880Z",
+      "blockchainError": "Contract address is not configured."
+    },
+    {
+      "id": "aud-1783186395117",
+      "action": "HealthSummaryGenerated",
+      "actor": "AI Agent",
+      "target": "Nitesh",
+      "details": "Generated AI health summary",
+      "txHash": "0x5d23b7353537796b7642b7b4e9039e68c00e00edda8bf83e69a3fbcd9f60711e",
+      "chainStatus": "ui-only",
+      "fallbackMessage": "",
+      "createdAt": "2026-07-04T17:33:15.120Z"
+    },
+    {
+      "id": "aud-1783186230381",
+      "action": "SHOW_AUDITViewed",
+      "actor": "AI Agent",
+      "target": "SHOW_AUDIT",
+      "details": "Opened SHOW_AUDIT",
+      "txHash": "0xc600bc91321ce06ce2729157935a12ca1f0a30ebb4a6940fdfc75c7a79e43561",
+      "chainStatus": "ui-only",
+      "fallbackMessage": "",
+      "createdAt": "2026-07-04T17:30:30.384Z"
+    },
+    {
+      "id": "aud-1783185004945",
+      "action": "CriticalFilterViewed",
+      "actor": "AI Agent",
+      "target": "Patients",
+      "details": "2 critical patient(s) shown",
+      "txHash": "",
+      "chainStatus": "pending-chain",
+      "fallbackMessage": "",
+      "createdAt": "2026-07-04T17:10:04.945Z"
+    },
+    {
+      "id": "aud-1783184876676",
+      "action": "RoleSwitched",
+      "actor": "AI Agent",
+      "target": "Doctor",
+      "details": "Dashboard switched to Doctor",
+      "txHash": "0x9e5630d782b22a1bd675d168630e136e44765f040e25d309c82549c48c177c1b",
+      "chainStatus": "ui-only",
+      "fallbackMessage": "",
+      "createdAt": "2026-07-04T17:07:56.676Z"
+    },
+    {
+      "id": "aud-1783184845726",
+      "action": "AIAnswered",
+      "actor": "AI Agent",
+      "target": "Question",
+      "details": "Parsed by CureLedger local agent.",
+      "txHash": "0x27a6f1ed0a4c49ca58c63bab9feda6a95d2ac585cd52674c83b9fe384378cca1",
+      "chainStatus": "ui-only",
+      "fallbackMessage": "",
+      "createdAt": "2026-07-04T17:07:25.726Z"
+    },
+    {
+      "id": "aud-1783184781823",
+      "action": "HealthSummaryGenerated",
+      "actor": "AI Agent",
+      "target": "Raj Kumar",
+      "details": "Generated AI health summary",
+      "txHash": "0x7fb54c0b8e7499e8d9a4dec30c48677c2dd9ef931c76fce7d6fc4059d52ef009",
+      "chainStatus": "ui-only",
+      "fallbackMessage": "",
+      "createdAt": "2026-07-04T17:06:21.826Z"
+    },
+    {
+      "id": "aud-1783184183563",
+      "action": "HealthSummaryGenerated",
+      "actor": "AI Agent",
+      "target": "Nitesh",
+      "details": "Generated AI health summary",
+      "txHash": "0xbd5375bbcfaeb83d929a4490a89e678e3574723213c98a923575bb1eea16d51f",
+      "chainStatus": "ui-only",
+      "fallbackMessage": "",
+      "createdAt": "2026-07-04T16:56:23.563Z"
+    },
+    {
+      "id": "aud-1783184174257",
+      "action": "RecordUploaded",
+      "actor": "Patient",
+      "target": "Blood Report",
+      "details": "Blood Report uploaded for Nitesh",
+      "txHash": "0xf20479c724ba7811775adaac9265d81b54a4610431940b4cfc933fbf062da33a",
+      "chainStatus": "local-proof",
+      "fallbackMessage": "Blockchain unavailable, local immutable audit hash created for demo.",
+      "createdAt": "2026-07-04T16:56:14.257Z",
+      "blockchainError": "Contract address is not configured."
+    },
+    {
+      "id": "aud-1783184169583",
+      "action": "PatientRegistered",
+      "actor": "Patient",
+      "target": "Nitesh",
+      "details": "Nitesh added with Dengue",
+      "txHash": "0xb42ae7d680c8d6d23e44b5d1d822ccb59f45356b6ac6b41d7e7327ef0051edd0",
+      "chainStatus": "local-proof",
+      "fallbackMessage": "Blockchain unavailable, local immutable audit hash created for demo.",
+      "createdAt": "2026-07-04T16:56:09.583Z",
+      "blockchainError": "Contract address is not configured."
+    },
+    {
+      "id": "aud-001",
+      "action": "PatientRegistered",
+      "actor": "Hospital",
+      "target": "Raj Kumar",
+      "details": "Raj Kumar registered with patient-owned vault",
+      "txHash": "0x8d4291af",
+      "chainStatus": "confirmed",
+      "createdAt": "2026-07-03T09:00:00.000Z"
+    },
+    {
+      "id": "aud-002",
+      "action": "RecordUploaded",
+      "actor": "City Hospital",
+      "target": "Blood Report",
+      "details": "Blood Report uploaded for Raj Kumar",
+      "txHash": "0x2a10cc64",
+      "chainStatus": "confirmed",
+      "createdAt": "2026-07-03T09:14:00.000Z"
+    },
+    {
+      "id": "aud-003",
+      "action": "AccessGranted",
+      "actor": "Raj Kumar",
+      "target": "Dr Kumar",
+      "details": "Blood Report shared for 7 days",
+      "txHash": "0x7e19bc72",
+      "chainStatus": "confirmed",
+      "createdAt": "2026-07-03T09:16:00.000Z"
+    }
+  ],
+  "ledger": [
+    {
+      "id": "aud-1783189259595",
+      "action": "ClaimApproved",
+      "actor": "Doctor",
+      "target": "CLM-3112",
+      "details": "CLM-3112 approved",
+      "txHash": "0xac5378851de13a5f4f2db9f31dabf61c3126c40ff5a1330030de295becd9ce7d",
+      "chainStatus": "local-proof",
+      "fallbackMessage": "Blockchain unavailable, local immutable audit hash created for demo.",
+      "createdAt": "2026-07-04T18:20:59.595Z",
+      "blockchainError": "Contract address is not configured."
+    },
+    {
+      "id": "aud-1783189250452",
+      "action": "ClaimCreated",
+      "actor": "Doctor",
+      "target": "CLM-3112",
+      "details": "CLM-3112 created for Rehana",
+      "txHash": "0x38469abdc3f2b921b84cc54b02f9707f437b3575e144528608c9c4cfe8d1e98e",
+      "chainStatus": "local-proof",
+      "fallbackMessage": "Blockchain unavailable, local immutable audit hash created for demo.",
+      "createdAt": "2026-07-04T18:20:50.452Z",
+      "blockchainError": "Contract address is not configured."
+    },
+    {
+      "id": "aud-1783189178329",
+      "action": "PatientRegistered",
+      "actor": "Doctor",
+      "target": "Rehana",
+      "details": "Rehana added with Fever",
+      "txHash": "0x055a84bba7534b55d69af097dbfb97b2562ead17ae6e1b2df5434acc8ab5836d",
+      "chainStatus": "local-proof",
+      "fallbackMessage": "Blockchain unavailable, local immutable audit hash created for demo.",
+      "createdAt": "2026-07-04T18:19:38.329Z",
+      "blockchainError": "Contract address is not configured."
+    },
+    {
+      "id": "aud-1783188551320",
+      "action": "DoctorRegistered",
+      "actor": "Doctor",
+      "target": "Dr Meera",
+      "details": "Dr Meera registered",
+      "txHash": "0x619a2354b7e1fb1c3464288133e932d62b10681d453d34d2bb059af13d7a7310",
+      "chainStatus": "local-proof",
+      "fallbackMessage": "Blockchain unavailable, local immutable audit hash created for demo.",
+      "createdAt": "2026-07-04T18:09:11.320Z",
+      "blockchainError": "Contract address is not configured."
+    },
+    {
+      "id": "aud-1783187024476",
+      "action": "ClaimApproved",
+      "actor": "Doctor",
+      "target": "CLM-2495",
+      "details": "CLM-2495 approved",
+      "txHash": "0x11e34c6a7dc9848af44c021eecf1efd84b384921081fbc1593534576854f8364",
+      "chainStatus": "local-proof",
+      "fallbackMessage": "Blockchain unavailable, local immutable audit hash created for demo.",
+      "createdAt": "2026-07-04T17:43:44.476Z",
+      "blockchainError": "Contract address is not configured."
+    },
+    {
+      "id": "aud-1783186457067",
+      "action": "ClaimRejected",
+      "actor": "Doctor",
+      "target": "CLM-2495",
+      "details": "CLM-2495 rejected",
+      "txHash": "0x98f879d936542cee537b89d39daa1968a6ee317edb21e548e0ff3fc295a9d04d",
+      "chainStatus": "local-proof",
+      "fallbackMessage": "Blockchain unavailable, local immutable audit hash created for demo.",
+      "createdAt": "2026-07-04T17:34:17.067Z",
+      "blockchainError": "Contract address is not configured."
+    },
+    {
+      "id": "aud-1783186447880",
+      "action": "ClaimCreated",
+      "actor": "Doctor",
+      "target": "CLM-2495",
+      "details": "CLM-2495 created for Raj Kumar",
+      "txHash": "0x7caaceede4ce83e7ad677862cc7874c08e922dadcb49db7440fe120ed71fa21b",
+      "chainStatus": "local-proof",
+      "fallbackMessage": "Blockchain unavailable, local immutable audit hash created for demo.",
+      "createdAt": "2026-07-04T17:34:07.880Z",
+      "blockchainError": "Contract address is not configured."
+    },
+    {
+      "id": "aud-1783186395117",
+      "action": "HealthSummaryGenerated",
+      "actor": "AI Agent",
+      "target": "Nitesh",
+      "details": "Generated AI health summary",
+      "txHash": "0x5d23b7353537796b7642b7b4e9039e68c00e00edda8bf83e69a3fbcd9f60711e",
+      "chainStatus": "ui-only",
+      "fallbackMessage": "",
+      "createdAt": "2026-07-04T17:33:15.120Z"
+    },
+    {
+      "id": "aud-1783186230381",
+      "action": "SHOW_AUDITViewed",
+      "actor": "AI Agent",
+      "target": "SHOW_AUDIT",
+      "details": "Opened SHOW_AUDIT",
+      "txHash": "0xc600bc91321ce06ce2729157935a12ca1f0a30ebb4a6940fdfc75c7a79e43561",
+      "chainStatus": "ui-only",
+      "fallbackMessage": "",
+      "createdAt": "2026-07-04T17:30:30.384Z"
+    },
+    {
+      "id": "aud-1783185004945",
+      "action": "CriticalFilterViewed",
+      "actor": "AI Agent",
+      "target": "Patients",
+      "details": "2 critical patient(s) shown",
+      "txHash": "",
+      "chainStatus": "pending-chain",
+      "fallbackMessage": "",
+      "createdAt": "2026-07-04T17:10:04.945Z"
+    },
+    {
+      "id": "aud-1783184876676",
+      "action": "RoleSwitched",
+      "actor": "AI Agent",
+      "target": "Doctor",
+      "details": "Dashboard switched to Doctor",
+      "txHash": "0x9e5630d782b22a1bd675d168630e136e44765f040e25d309c82549c48c177c1b",
+      "chainStatus": "ui-only",
+      "fallbackMessage": "",
+      "createdAt": "2026-07-04T17:07:56.676Z"
+    },
+    {
+      "id": "aud-1783184845726",
+      "action": "AIAnswered",
+      "actor": "AI Agent",
+      "target": "Question",
+      "details": "Parsed by CureLedger local agent.",
+      "txHash": "0x27a6f1ed0a4c49ca58c63bab9feda6a95d2ac585cd52674c83b9fe384378cca1",
+      "chainStatus": "ui-only",
+      "fallbackMessage": "",
+      "createdAt": "2026-07-04T17:07:25.726Z"
+    },
+    {
+      "id": "aud-1783184781823",
+      "action": "HealthSummaryGenerated",
+      "actor": "AI Agent",
+      "target": "Raj Kumar",
+      "details": "Generated AI health summary",
+      "txHash": "0x7fb54c0b8e7499e8d9a4dec30c48677c2dd9ef931c76fce7d6fc4059d52ef009",
+      "chainStatus": "ui-only",
+      "fallbackMessage": "",
+      "createdAt": "2026-07-04T17:06:21.826Z"
+    },
+    {
+      "id": "aud-1783184183563",
+      "action": "HealthSummaryGenerated",
+      "actor": "AI Agent",
+      "target": "Nitesh",
+      "details": "Generated AI health summary",
+      "txHash": "0xbd5375bbcfaeb83d929a4490a89e678e3574723213c98a923575bb1eea16d51f",
+      "chainStatus": "ui-only",
+      "fallbackMessage": "",
+      "createdAt": "2026-07-04T16:56:23.563Z"
+    },
+    {
+      "id": "aud-1783184174257",
+      "action": "RecordUploaded",
+      "actor": "Patient",
+      "target": "Blood Report",
+      "details": "Blood Report uploaded for Nitesh",
+      "txHash": "0xf20479c724ba7811775adaac9265d81b54a4610431940b4cfc933fbf062da33a",
+      "chainStatus": "local-proof",
+      "fallbackMessage": "Blockchain unavailable, local immutable audit hash created for demo.",
+      "createdAt": "2026-07-04T16:56:14.257Z",
+      "blockchainError": "Contract address is not configured."
+    },
+    {
+      "id": "aud-1783184169583",
+      "action": "PatientRegistered",
+      "actor": "Patient",
+      "target": "Nitesh",
+      "details": "Nitesh added with Dengue",
+      "txHash": "0xb42ae7d680c8d6d23e44b5d1d822ccb59f45356b6ac6b41d7e7327ef0051edd0",
+      "chainStatus": "local-proof",
+      "fallbackMessage": "Blockchain unavailable, local immutable audit hash created for demo.",
+      "createdAt": "2026-07-04T16:56:09.583Z",
+      "blockchainError": "Contract address is not configured."
+    },
+    {
+      "id": "aud-001",
+      "action": "PatientRegistered",
+      "actor": "Hospital",
+      "target": "Raj Kumar",
+      "details": "Raj Kumar registered with patient-owned vault",
+      "txHash": "0x8d4291af",
+      "chainStatus": "confirmed",
+      "createdAt": "2026-07-03T09:00:00.000Z"
+    },
+    {
+      "id": "aud-002",
+      "action": "RecordUploaded",
+      "actor": "City Hospital",
+      "target": "Blood Report",
+      "details": "Blood Report uploaded for Raj Kumar",
+      "txHash": "0x2a10cc64",
+      "chainStatus": "confirmed",
+      "createdAt": "2026-07-03T09:14:00.000Z"
+    },
+    {
+      "id": "aud-003",
+      "action": "AccessGranted",
+      "actor": "Raj Kumar",
+      "target": "Dr Kumar",
+      "details": "Blood Report shared for 7 days",
+      "txHash": "0x7e19bc72",
+      "chainStatus": "confirmed",
+      "createdAt": "2026-07-03T09:16:00.000Z"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "aud-1783189259595",
+      "action": "ClaimApproved",
+      "actor": "Doctor",
+      "target": "CLM-3112",
+      "details": "CLM-3112 approved",
+      "txHash": "0xac5378851de13a5f4f2db9f31dabf61c3126c40ff5a1330030de295becd9ce7d",
+      "chainStatus": "local-proof",
+      "fallbackMessage": "Blockchain unavailable, local immutable audit hash created for demo.",
+      "createdAt": "2026-07-04T18:20:59.595Z",
+      "blockchainError": "Contract address is not configured."
+    },
+    {
+      "id": "aud-1783189250452",
+      "action": "ClaimCreated",
+      "actor": "Doctor",
+      "target": "CLM-3112",
+      "details": "CLM-3112 created for Rehana",
+      "txHash": "0x38469abdc3f2b921b84cc54b02f9707f437b3575e144528608c9c4cfe8d1e98e",
+      "chainStatus": "local-proof",
+      "fallbackMessage": "Blockchain unavailable, local immutable audit hash created for demo.",
+      "createdAt": "2026-07-04T18:20:50.452Z",
+      "blockchainError": "Contract address is not configured."
+    },
+    {
+      "id": "aud-1783189178329",
+      "action": "PatientRegistered",
+      "actor": "Doctor",
+      "target": "Rehana",
+      "details": "Rehana added with Fever",
+      "txHash": "0x055a84bba7534b55d69af097dbfb97b2562ead17ae6e1b2df5434acc8ab5836d",
+      "chainStatus": "local-proof",
+      "fallbackMessage": "Blockchain unavailable, local immutable audit hash created for demo.",
+      "createdAt": "2026-07-04T18:19:38.329Z",
+      "blockchainError": "Contract address is not configured."
+    },
+    {
+      "id": "aud-1783188551320",
+      "action": "DoctorRegistered",
+      "actor": "Doctor",
+      "target": "Dr Meera",
+      "details": "Dr Meera registered",
+      "txHash": "0x619a2354b7e1fb1c3464288133e932d62b10681d453d34d2bb059af13d7a7310",
+      "chainStatus": "local-proof",
+      "fallbackMessage": "Blockchain unavailable, local immutable audit hash created for demo.",
+      "createdAt": "2026-07-04T18:09:11.320Z",
+      "blockchainError": "Contract address is not configured."
+    },
+    {
+      "id": "aud-1783187024476",
+      "action": "ClaimApproved",
+      "actor": "Doctor",
+      "target": "CLM-2495",
+      "details": "CLM-2495 approved",
+      "txHash": "0x11e34c6a7dc9848af44c021eecf1efd84b384921081fbc1593534576854f8364",
+      "chainStatus": "local-proof",
+      "fallbackMessage": "Blockchain unavailable, local immutable audit hash created for demo.",
+      "createdAt": "2026-07-04T17:43:44.476Z",
+      "blockchainError": "Contract address is not configured."
+    },
+    {
+      "id": "aud-1783186457067",
+      "action": "ClaimRejected",
+      "actor": "Doctor",
+      "target": "CLM-2495",
+      "details": "CLM-2495 rejected",
+      "txHash": "0x98f879d936542cee537b89d39daa1968a6ee317edb21e548e0ff3fc295a9d04d",
+      "chainStatus": "local-proof",
+      "fallbackMessage": "Blockchain unavailable, local immutable audit hash created for demo.",
+      "createdAt": "2026-07-04T17:34:17.067Z",
+      "blockchainError": "Contract address is not configured."
+    },
+    {
+      "id": "aud-1783186447880",
+      "action": "ClaimCreated",
+      "actor": "Doctor",
+      "target": "CLM-2495",
+      "details": "CLM-2495 created for Raj Kumar",
+      "txHash": "0x7caaceede4ce83e7ad677862cc7874c08e922dadcb49db7440fe120ed71fa21b",
+      "chainStatus": "local-proof",
+      "fallbackMessage": "Blockchain unavailable, local immutable audit hash created for demo.",
+      "createdAt": "2026-07-04T17:34:07.880Z",
+      "blockchainError": "Contract address is not configured."
+    },
+    {
+      "id": "aud-1783186395117",
+      "action": "HealthSummaryGenerated",
+      "actor": "AI Agent",
+      "target": "Nitesh",
+      "details": "Generated AI health summary",
+      "txHash": "0x5d23b7353537796b7642b7b4e9039e68c00e00edda8bf83e69a3fbcd9f60711e",
+      "chainStatus": "ui-only",
+      "fallbackMessage": "",
+      "createdAt": "2026-07-04T17:33:15.120Z"
+    },
+    {
+      "id": "aud-1783186230381",
+      "action": "SHOW_AUDITViewed",
+      "actor": "AI Agent",
+      "target": "SHOW_AUDIT",
+      "details": "Opened SHOW_AUDIT",
+      "txHash": "0xc600bc91321ce06ce2729157935a12ca1f0a30ebb4a6940fdfc75c7a79e43561",
+      "chainStatus": "ui-only",
+      "fallbackMessage": "",
+      "createdAt": "2026-07-04T17:30:30.384Z"
+    },
+    {
+      "id": "aud-1783185004945",
+      "action": "CriticalFilterViewed",
+      "actor": "AI Agent",
+      "target": "Patients",
+      "details": "2 critical patient(s) shown",
+      "txHash": "",
+      "chainStatus": "pending-chain",
+      "fallbackMessage": "",
+      "createdAt": "2026-07-04T17:10:04.945Z"
+    },
+    {
+      "id": "aud-1783184876676",
+      "action": "RoleSwitched",
+      "actor": "AI Agent",
+      "target": "Doctor",
+      "details": "Dashboard switched to Doctor",
+      "txHash": "0x9e5630d782b22a1bd675d168630e136e44765f040e25d309c82549c48c177c1b",
+      "chainStatus": "ui-only",
+      "fallbackMessage": "",
+      "createdAt": "2026-07-04T17:07:56.676Z"
+    },
+    {
+      "id": "aud-1783184845726",
+      "action": "AIAnswered",
+      "actor": "AI Agent",
+      "target": "Question",
+      "details": "Parsed by CureLedger local agent.",
+      "txHash": "0x27a6f1ed0a4c49ca58c63bab9feda6a95d2ac585cd52674c83b9fe384378cca1",
+      "chainStatus": "ui-only",
+      "fallbackMessage": "",
+      "createdAt": "2026-07-04T17:07:25.726Z"
+    },
+    {
+      "id": "aud-1783184781823",
+      "action": "HealthSummaryGenerated",
+      "actor": "AI Agent",
+      "target": "Raj Kumar",
+      "details": "Generated AI health summary",
+      "txHash": "0x7fb54c0b8e7499e8d9a4dec30c48677c2dd9ef931c76fce7d6fc4059d52ef009",
+      "chainStatus": "ui-only",
+      "fallbackMessage": "",
+      "createdAt": "2026-07-04T17:06:21.826Z"
+    },
+    {
+      "id": "aud-1783184183563",
+      "action": "HealthSummaryGenerated",
+      "actor": "AI Agent",
+      "target": "Nitesh",
+      "details": "Generated AI health summary",
+      "txHash": "0xbd5375bbcfaeb83d929a4490a89e678e3574723213c98a923575bb1eea16d51f",
+      "chainStatus": "ui-only",
+      "fallbackMessage": "",
+      "createdAt": "2026-07-04T16:56:23.563Z"
+    },
+    {
+      "id": "aud-1783184174257",
+      "action": "RecordUploaded",
+      "actor": "Patient",
+      "target": "Blood Report",
+      "details": "Blood Report uploaded for Nitesh",
+      "txHash": "0xf20479c724ba7811775adaac9265d81b54a4610431940b4cfc933fbf062da33a",
+      "chainStatus": "local-proof",
+      "fallbackMessage": "Blockchain unavailable, local immutable audit hash created for demo.",
+      "createdAt": "2026-07-04T16:56:14.257Z",
+      "blockchainError": "Contract address is not configured."
+    },
+    {
+      "id": "aud-1783184169583",
+      "action": "PatientRegistered",
+      "actor": "Patient",
+      "target": "Nitesh",
+      "details": "Nitesh added with Dengue",
+      "txHash": "0xb42ae7d680c8d6d23e44b5d1d822ccb59f45356b6ac6b41d7e7327ef0051edd0",
+      "chainStatus": "local-proof",
+      "fallbackMessage": "Blockchain unavailable, local immutable audit hash created for demo.",
+      "createdAt": "2026-07-04T16:56:09.583Z",
+      "blockchainError": "Contract address is not configured."
+    },
+    {
+      "id": "aud-001",
+      "action": "PatientRegistered",
+      "actor": "Hospital",
+      "target": "Raj Kumar",
+      "details": "Raj Kumar registered with patient-owned vault",
+      "txHash": "0x8d4291af",
+      "chainStatus": "confirmed",
+      "createdAt": "2026-07-03T09:00:00.000Z"
+    },
+    {
+      "id": "aud-002",
+      "action": "RecordUploaded",
+      "actor": "City Hospital",
+      "target": "Blood Report",
+      "details": "Blood Report uploaded for Raj Kumar",
+      "txHash": "0x2a10cc64",
+      "chainStatus": "confirmed",
+      "createdAt": "2026-07-03T09:14:00.000Z"
+    },
+    {
+      "id": "aud-003",
+      "action": "AccessGranted",
+      "actor": "Raj Kumar",
+      "target": "Dr Kumar",
+      "details": "Blood Report shared for 7 days",
+      "txHash": "0x7e19bc72",
+      "chainStatus": "confirmed",
+      "createdAt": "2026-07-03T09:16:00.000Z"
+    }
+  ],
+  "aiSummary": "Nitesh has Dengue with critical severity. Records: 1. Active consents: 0. Latest report: Blood Report. This AI summary is for assistance only and not a medical diagnosis. Please consult a certified doctor.",
+  "suggestedActions": [
+    "Show critical patients",
+    "Share my blood report with Dr Kumar for 7 days",
+    "Create insurance claim for Raj amount 50000",
+    "Show blockchain audit"
+  ],
+  "lastFocus": {
+    "patientId": "pat-raj",
+    "doctor": "Dr Kumar",
+    "claimId": "CLM-1001"
+  },
+  "appointments": [],
+  "reports": [
+    {
+      "id": "rpt-1783184174257",
+      "patientId": "pat-nitesh-9583",
+      "patientName": "Nitesh",
+      "recordId": "rec-nitesh-blood-report-74257",
+      "fileName": "Blood Report.pdf",
+      "summary": "Blood Report uploaded for Nitesh. AI extracted a simple summary.",
+      "abnormalValues": [
+        "High-risk flags require doctor review"
+      ],
+      "riskLevel": "critical",
+      "recommendation": "Review with the assigned doctor.",
+      "specialist": "Cardiologist",
+      "provider": "local-agent",
+      "createdAt": "2026-07-04T16:56:14.257Z"
+    }
+  ],
+  "aiMemory": [
+    {
+      "id": "mem-1783189259595",
+      "intent": "APPROVE_CLAIM",
+      "message": "Approve the claim",
+      "selectedPatientId": "pat-rehana-8329",
+      "selectedClaimId": "CLM-3112",
+      "usedContext": true,
+      "createdAt": "2026-07-04T18:20:59.595Z"
+    },
+    {
+      "id": "mem-1783189250452",
+      "intent": "CREATE_CLAIM",
+      "message": "give insurance claim to rehana",
+      "selectedPatientId": "pat-rehana-8329",
+      "selectedClaimId": "CLM-2495",
+      "usedContext": false,
+      "createdAt": "2026-07-04T18:20:50.452Z"
+    },
+    {
+      "id": "mem-1783189178328",
+      "intent": "ADD_PATIENT",
+      "message": "add patient rehana age 28 with fever",
+      "selectedPatientId": "pat-raj",
+      "selectedClaimId": "CLM-2495",
+      "usedContext": false,
+      "createdAt": "2026-07-04T18:19:38.328Z"
+    },
+    {
+      "id": "mem-1783188551318",
+      "intent": "ADD_DOCTOR",
+      "message": "Register Dr Meera as dermatologist",
+      "selectedPatientId": "pat-meera",
+      "selectedClaimId": "CLM-2495",
+      "usedContext": false,
+      "createdAt": "2026-07-04T18:09:11.318Z"
+    },
+    {
+      "id": "mem-1783187024474",
+      "intent": "APPROVE_CLAIM",
+      "message": "Approve the claim",
+      "selectedPatientId": "pat-raj",
+      "selectedClaimId": "CLM-2495",
+      "usedContext": true,
+      "createdAt": "2026-07-04T17:43:44.475Z"
+    },
+    {
+      "id": "mem-1783186457067",
+      "intent": "REJECT_CLAIM",
+      "message": "Reject the claim",
+      "selectedPatientId": "pat-raj",
+      "selectedClaimId": "CLM-2495",
+      "usedContext": true,
+      "createdAt": "2026-07-04T17:34:17.067Z"
+    },
+    {
+      "id": "mem-1783186447879",
+      "intent": "CREATE_CLAIM",
+      "message": "Create insurance claim for Raj amount 50000",
+      "selectedPatientId": "pat-raj",
+      "selectedClaimId": "CLM-1001",
+      "usedContext": false,
+      "createdAt": "2026-07-04T17:34:07.879Z"
+    },
+    {
+      "id": "mem-1783186395116",
+      "intent": "SUMMARIZE_HISTORY",
+      "message": "nitesh report",
+      "selectedPatientId": "pat-nitesh-9583",
+      "selectedClaimId": "CLM-1001",
+      "usedContext": false,
+      "createdAt": "2026-07-04T17:33:15.116Z"
+    },
+    {
+      "id": "mem-1783186230379",
+      "intent": "SHOW_AUDIT",
+      "message": "Show audit logs",
+      "selectedPatientId": "pat-raj",
+      "selectedClaimId": "CLM-1001",
+      "usedContext": false,
+      "createdAt": "2026-07-04T17:30:30.380Z"
+    },
+    {
+      "id": "mem-1783185004944",
+      "intent": "SHOW_CRITICAL_PATIENTS",
+      "message": "Show critical patients",
+      "selectedPatientId": "pat-raj",
+      "selectedClaimId": "CLM-1001",
+      "usedContext": false,
+      "createdAt": "2026-07-04T17:10:04.944Z"
+    },
+    {
+      "id": "mem-1783184876676",
+      "intent": "SWITCH_ROLE",
+      "message": "change to doctor portal",
+      "selectedPatientId": "pat-raj",
+      "selectedClaimId": "CLM-1001",
+      "usedContext": false,
+      "createdAt": "2026-07-04T17:07:56.676Z"
+    },
+    {
+      "id": "mem-1783184845726",
+      "intent": "GENERIC_ANSWER",
+      "message": "doctor portal ",
+      "selectedPatientId": "pat-raj",
+      "selectedClaimId": "CLM-1001",
+      "usedContext": false,
+      "createdAt": "2026-07-04T17:07:25.726Z"
+    },
+    {
+      "id": "mem-1783184781821",
+      "intent": "SUMMARIZE_HISTORY",
+      "message": "rajkumar report",
+      "selectedPatientId": "pat-raj",
+      "selectedClaimId": "CLM-1001",
+      "usedContext": false,
+      "createdAt": "2026-07-04T17:06:21.821Z"
+    },
+    {
+      "id": "mem-1783184183562",
+      "intent": "SUMMARIZE_HISTORY",
+      "message": "Analyze Nitesh blood report",
+      "selectedPatientId": "pat-nitesh-9583",
+      "selectedClaimId": "CLM-1001",
+      "usedContext": false,
+      "createdAt": "2026-07-04T16:56:23.562Z"
+    },
+    {
+      "id": "mem-1783184174257",
+      "intent": "UPLOAD_RECORD",
+      "message": "Upload my blood report",
+      "selectedPatientId": "pat-nitesh-9583",
+      "selectedClaimId": "CLM-1001",
+      "usedContext": false,
+      "createdAt": "2026-07-04T16:56:14.257Z"
+    },
+    {
+      "id": "mem-1783184169583",
+      "intent": "ADD_PATIENT",
+      "message": "Add patient Nitesh age 24 with dengue severity critical",
+      "selectedPatientId": "pat-nitesh",
+      "selectedClaimId": "CLM-1001",
+      "usedContext": false,
+      "createdAt": "2026-07-04T16:56:09.583Z"
+    }
+  ],
+  "roleSessions": [],
+  "track4Trace": [
+    {
+      "label": "AI intent detected",
+      "status": "complete",
+      "detail": "APPROVE_CLAIM"
+    },
+    {
+      "label": "Dynamic UI rendered",
+      "status": "complete",
+      "detail": "APPROVE_CLAIM"
+    },
+    {
+      "label": "Backend API called",
+      "status": "complete",
+      "detail": "/api/agent"
+    },
+    {
+      "label": "Database updated",
+      "status": "complete",
+      "detail": "json-fallback"
+    },
+    {
+      "label": "Live UI updated",
+      "status": "complete",
+      "detail": "SSE /api/events"
+    },
+    {
+      "label": "Blockchain audit created",
+      "status": "complete",
+      "detail": "local immutable audit hash"
+    },
+    {
+      "label": "Memory used",
+      "status": "complete",
+      "detail": "pronoun/context resolved"
+    },
+    {
+      "label": "Data persisted after refresh",
+      "status": "complete",
+      "detail": "MongoDB or JSON fallback"
+    }
+  ],
+  "storage": {
+    "mode": "json-fallback",
+    "connected": false,
+    "uri": "",
+    "dbName": "cureledger",
+    "error": "MongoDB is not configured; using JSON fallback."
+  }
+}

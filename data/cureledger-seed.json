@@ -1,0 +1,308 @@
+{
+  "version": 3,
+  "agentState": {
+    "currentRole": "Patient",
+    "connectedWallet": "",
+    "selectedPatientId": "pat-raj",
+    "selectedDoctorId": "doc-kumar",
+    "selectedRecordId": "rec-raj-blood",
+    "selectedClaimId": "CLM-1001",
+    "activePanel": "SHOW_PATIENTS",
+    "lastIntent": "INIT",
+    "lastEntity": "Raj Kumar",
+    "memory": []
+  },
+  "appState": {
+    "currentRole": "Patient",
+    "connectedWallet": "",
+    "selectedPatientId": "pat-raj",
+    "selectedDoctorId": "doc-kumar",
+    "selectedReportId": "rec-raj-blood",
+    "selectedClaimId": "CLM-1001",
+    "currentSection": "SHOW_PATIENTS",
+    "recentCommand": "Launch CureLedger AI",
+    "chainId": "",
+    "lastConsentAction": "AccessGranted",
+    "claimStatus": "pending",
+    "emergencyMode": false
+  },
+  "patients": [
+    {
+      "id": "pat-raj",
+      "name": "Raj Kumar",
+      "age": 45,
+      "condition": "Diabetes",
+      "severity": "critical",
+      "risk": "High",
+      "status": "Critical",
+      "wallet": "0x3C44...93BC",
+      "assignedDoctor": "Dr Kumar",
+      "records": ["rec-raj-blood"],
+      "consent": [
+        {
+          "doctorId": "doc-kumar",
+          "doctor": "Dr Kumar",
+          "recordId": "rec-raj-blood",
+          "access": "Blood Report",
+          "expiry": "7 days",
+          "status": "active"
+        }
+      ],
+      "lastReport": "Blood Report",
+      "ownershipScore": 91,
+      "createdAt": "2026-07-03T09:00:00.000Z"
+    },
+    {
+      "id": "pat-nitesh",
+      "name": "Nitesh",
+      "age": 24,
+      "condition": "Dengue Recovery",
+      "severity": "moderate",
+      "risk": "Moderate",
+      "status": "Active",
+      "wallet": "0x8c4A...7721",
+      "assignedDoctor": "Dr Kumar",
+      "records": ["rec-nitesh-cbc"],
+      "consent": [],
+      "lastReport": "CBC Report",
+      "ownershipScore": 88,
+      "createdAt": "2026-07-03T09:03:00.000Z"
+    },
+    {
+      "id": "pat-meera",
+      "name": "Meera Iyer",
+      "age": 28,
+      "condition": "Asthma",
+      "severity": "moderate",
+      "risk": "Moderate",
+      "status": "Active",
+      "wallet": "0x90F7...c9C1",
+      "assignedDoctor": "Dr Priya",
+      "records": ["rec-meera-mri"],
+      "consent": [],
+      "lastReport": "MRI Scan",
+      "ownershipScore": 78,
+      "createdAt": "2026-07-03T09:05:00.000Z"
+    },
+    {
+      "id": "pat-ananya",
+      "name": "Ananya Sharma",
+      "age": 34,
+      "condition": "Blood Pressure",
+      "severity": "stable",
+      "risk": "Normal",
+      "status": "Stable",
+      "wallet": "0x15d3...AA12",
+      "assignedDoctor": "Dr Priya",
+      "records": ["rec-ananya-prescription"],
+      "consent": [],
+      "lastReport": "Prescription",
+      "ownershipScore": 84,
+      "createdAt": "2026-07-03T09:10:00.000Z"
+    }
+  ],
+  "doctors": [
+    {
+      "id": "doc-kumar",
+      "name": "Dr Kumar",
+      "specialization": "Cardiologist",
+      "wallet": "0x7099...79C8",
+      "patients": ["pat-raj", "pat-nitesh"],
+      "accessRequests": [],
+      "status": "Approved",
+      "createdAt": "2026-07-03T08:50:00.000Z"
+    },
+    {
+      "id": "doc-priya",
+      "name": "Dr Priya",
+      "specialization": "General Physician",
+      "wallet": "0x9965...A4dc",
+      "patients": ["pat-meera", "pat-ananya"],
+      "accessRequests": [
+        {
+          "id": "req-meera-priya",
+          "patientId": "pat-meera",
+          "reason": "Asthma follow-up",
+          "status": "pending"
+        }
+      ],
+      "status": "Approved",
+      "createdAt": "2026-07-03T08:55:00.000Z"
+    },
+    {
+      "id": "doc-ahmed",
+      "name": "Dr Ahmed",
+      "specialization": "Neurologist",
+      "wallet": "0x976e...E0D1",
+      "patients": [],
+      "accessRequests": [],
+      "status": "Approved",
+      "createdAt": "2026-07-03T08:58:00.000Z"
+    }
+  ],
+  "records": [
+    {
+      "id": "rec-raj-blood",
+      "patientId": "pat-raj",
+      "patientName": "Raj Kumar",
+      "title": "Blood Report",
+      "name": "Blood Report",
+      "type": "Blood Report",
+      "summary": "HbA1c and glucose trend are elevated; doctor review is recommended.",
+      "explanation": "The blood report suggests sugar control is higher than expected. This is not a diagnosis; Raj should consult a certified doctor.",
+      "hash": "0x9b1c7a3e4d2f",
+      "uploadedBy": "City Hospital",
+      "verifiedBy": "City Hospital",
+      "sharedWith": ["doc-kumar"],
+      "risk": "High",
+      "createdAt": "2026-07-03T09:14:00.000Z",
+      "date": "2026-07-03"
+    },
+    {
+      "id": "rec-nitesh-cbc",
+      "patientId": "pat-nitesh",
+      "patientName": "Nitesh",
+      "title": "CBC Report",
+      "name": "CBC Report",
+      "type": "Blood Report",
+      "summary": "Platelet count is under observation after dengue symptoms; follow-up is recommended.",
+      "explanation": "The CBC report needs doctor review because platelet trends can matter during dengue recovery. This is not a diagnosis.",
+      "hash": "0x5fc9bb13e778",
+      "uploadedBy": "City Hospital",
+      "verifiedBy": "City Hospital",
+      "sharedWith": [],
+      "risk": "Moderate",
+      "createdAt": "2026-07-03T09:16:00.000Z",
+      "date": "2026-07-03"
+    },
+    {
+      "id": "rec-meera-mri",
+      "patientId": "pat-meera",
+      "patientName": "Meera Iyer",
+      "title": "MRI Scan",
+      "name": "MRI Scan",
+      "type": "MRI Scan",
+      "summary": "No acute abnormality in demo MRI report.",
+      "explanation": "The MRI summary does not show urgent abnormalities in this demo data.",
+      "hash": "0x314fd8aa90ef",
+      "uploadedBy": "Metro Diagnostics",
+      "verifiedBy": "Metro Diagnostics",
+      "sharedWith": [],
+      "risk": "Moderate",
+      "createdAt": "2026-07-03T09:18:00.000Z",
+      "date": "2026-07-03"
+    },
+    {
+      "id": "rec-ananya-prescription",
+      "patientId": "pat-ananya",
+      "patientName": "Ananya Sharma",
+      "title": "Prescription",
+      "name": "Prescription",
+      "type": "Prescription",
+      "summary": "Blood pressure medication renewed for 30 days.",
+      "explanation": "The prescription indicates stable management and routine monitoring.",
+      "hash": "0xa1c70bb81dc2",
+      "uploadedBy": "Dr Priya",
+      "verifiedBy": "Dr Priya",
+      "sharedWith": [],
+      "risk": "Normal",
+      "createdAt": "2026-07-03T09:20:00.000Z",
+      "date": "2026-07-03"
+    }
+  ],
+  "claims": [
+    {
+      "id": "CLM-1001",
+      "patientId": "pat-raj",
+      "patientName": "Raj Kumar",
+      "amount": 50000,
+      "reason": "Diabetes blood report review",
+      "status": "pending",
+      "progress": 35,
+      "packet": "Blood Report, Patient Profile, Consent Proof",
+      "aiSummary": "Claim has key documents and awaits insurer decision.",
+      "createdAt": "2026-07-03T09:25:00.000Z"
+    },
+    {
+      "id": "CLM-1002",
+      "patientId": "pat-meera",
+      "patientName": "Meera Iyer",
+      "amount": 22000,
+      "reason": "Asthma MRI scan reimbursement",
+      "status": "approved",
+      "progress": 100,
+      "packet": "MRI Scan, Patient Profile",
+      "aiSummary": "Claim approved from complete demo documentation.",
+      "createdAt": "2026-07-03T09:30:00.000Z"
+    }
+  ],
+  "permissions": [
+    {
+      "id": "perm-raj-kumar",
+      "patientId": "pat-raj",
+      "doctorId": "doc-kumar",
+      "doctor": "Dr Kumar",
+      "recordId": "rec-raj-blood",
+      "access": "Blood Report",
+      "expiry": "7 days",
+      "status": "active"
+    }
+  ],
+  "prescriptions": [],
+  "accessRequests": [
+    {
+      "id": "req-meera-priya",
+      "doctor": "Dr Priya",
+      "doctorId": "doc-priya",
+      "patientId": "pat-meera",
+      "reason": "Asthma follow-up",
+      "status": "pending"
+    }
+  ],
+  "audit": [
+    {
+      "id": "aud-001",
+      "action": "PatientRegistered",
+      "actor": "Hospital",
+      "target": "Raj Kumar",
+      "details": "Raj Kumar registered with patient-owned vault",
+      "txHash": "0x8d4291af",
+      "chainStatus": "confirmed",
+      "createdAt": "2026-07-03T09:00:00.000Z"
+    },
+    {
+      "id": "aud-002",
+      "action": "RecordUploaded",
+      "actor": "City Hospital",
+      "target": "Blood Report",
+      "details": "Blood Report uploaded for Raj Kumar",
+      "txHash": "0x2a10cc64",
+      "chainStatus": "confirmed",
+      "createdAt": "2026-07-03T09:14:00.000Z"
+    },
+    {
+      "id": "aud-003",
+      "action": "AccessGranted",
+      "actor": "Raj Kumar",
+      "target": "Dr Kumar",
+      "details": "Blood Report shared for 7 days",
+      "txHash": "0x7e19bc72",
+      "chainStatus": "confirmed",
+      "createdAt": "2026-07-03T09:16:00.000Z"
+    }
+  ],
+  "ledger": [],
+  "timeline": [],
+  "aiSummary": "Raj Kumar has a critical diabetes follow-up, one blood report, one active consent, and one pending claim.",
+  "suggestedActions": [
+    "Show critical patients",
+    "Share my blood report with Dr Kumar for 7 days",
+    "Create insurance claim for Raj amount 50000",
+    "Show blockchain audit"
+  ],
+  "lastFocus": {
+    "patientId": "pat-raj",
+    "doctor": "Dr Kumar",
+    "claimId": "CLM-1001"
+  }
+}
